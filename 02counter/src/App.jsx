@@ -10,10 +10,25 @@ function App() {
 
   // let counter = 15
 
+  // const addValue = () => {
+  //   if (counter < 20) {
+  //     counter++
+  //     setCounter(counter)
+  //     console.log("value added", counter);
+  //   }
   const addValue = () => {
     if (counter < 20) {
-      counter++
-      setCounter(counter)
+      // By the following counter increase by 1 only, as this happens in batch 
+      // and only one batch will work
+      // setCounter(counter + 1)
+      // setCounter(counter + 1)
+      // setCounter(counter + 1)
+      // setCounter(counter + 1)
+      // below is the correct syntax to fetch the original counter value 
+      setCounter((prevCounter) => prevCounter + 1) // values coming through callback
+      setCounter((prevCounter) => prevCounter + 1)
+      setCounter((prevCounter) => prevCounter + 1)
+      setCounter((prevCounter) => prevCounter + 1)
       console.log("value added", counter);
     }
   }
